@@ -1,0 +1,1 @@
+rm -f iso_prepare/init.cpio && cd rootfs && find . -print0 | cpio --null -ov -H newc | gzip -9 > ../iso_prepare/init.cpio && cd .. && ls -l iso_prepare/init.cpio

@@ -1,0 +1,40 @@
+-----------Versione 0.1---------------
+
+		GENESI DI UNA DISSAVENTURA
+
+creazione ufficiale e sviluppo serale di BillyOS
+
+1) configurato il kernel (con il supporto del framebuffer per i tux, molto importante)
+
+2) configurato e compilato busybox
+
+3) sistemato alcuni problemi critici che causava un kernel panic (scrivere ed eseguire "exit" o premere ctr+d)
+
+4) sono messo meglio mentalmente
+
+------------Versione 0.1A-------------
+
+		PER UN MONDO PIENO DI COLORI
+
+1) settato il layout in italiano (così mi posso dedicare per la creazione dello user)
+
+2) colori ovunque (come dice il titolo)
+
+3) sistemato il /bin/sh job not working
+
+4) Altre cianfrusaglie aggiunte per bloattare il mio sistema operativo
+
+------------Versione 0.2--------------
+
+		GLOBALIZZAZIONE...circa
+
+1) implementato il supporto uefi per l'avvio del sistema operativo (prima era solamente x86 boot)
+
+2) tentativo fallimentare di includere un buon bootloader per BillyOS (per ora o per sempre si avvierà tramite efi-stub)
+
+3) ripulita la directory principale da immondizia e clonazioni
+
+4) sono distuttooooooooooooooooooooooooooooooooooooooooooooooooooooo
+
+--------------------------------------
+
