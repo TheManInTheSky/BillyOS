@@ -1,0 +1,6 @@
+bzImage
+*.cpio
+*.iso
+*.img
+*.o
+.config
