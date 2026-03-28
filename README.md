@@ -1,5 +1,9 @@
 # BillyOS
-<img src="pixil-frame-0(1).png" width="200">
+<p align="center">
+  <img src="pixil-frame-0(1).png" width="128" style="image-rendering: pixelated;">
+  <br>
+  <b>Billy: La faccia ufficiale di BillyOS</b>
+</p>
 a little distro made for fun.
 
 ## Tools used on the OS
