@@ -1,7 +1,7 @@
 # BillyOS
 a little distro made for fun.
 
-## For this i used
+## Tools used on the OS
 
 * the kernel linux (custom made)
 * BusyBox for rootfs
