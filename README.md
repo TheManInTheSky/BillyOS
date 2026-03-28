@@ -1,6 +1,6 @@
 # BillyOS
 <p align="center">
-  <img src="pixil-frame-0(1).png" width="128" style="image-rendering: pixelated;">
+  <img src="pixil-frame-0(1).png" width="256" style="image-rendering: pixelated;">
   <br>
 </p>
 a little distro made for fun.
