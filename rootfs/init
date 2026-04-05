@@ -4,6 +4,8 @@ stampaOk(){
 	echo -e "\e[1;34m[\e[1;32m OK \e[1;34m]\e[0m $1"
 }
 
+export PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
 mount -t proc proc /proc
 stampaOk "Montando /proc"
 sleep 0.4
@@ -20,13 +22,12 @@ loadkmap < /usr/share/keymaps/it.bmap
 stampaOk "impostanado il layout in italiano"
 sleep 0.4
 
-
 # Cornice Blu Doppia - Calibrata per l'MSI
 echo -e "\e[34m\xe2\x95\x94\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x97\e[0m"
 
 # Testo interno
 echo -e "\e[34m\xe2\x95\x91 \e[1;37m  B I L L Y  O S   \e[0m\e[34m\xe2\x95\x91\e[0m"
-echo -e "\e[34m\xe2\x95\x91 \e[34m      v 0.2        \e[0m\e[34m\xe2\x95\x91\e[0m"
+echo -e "\e[34m\xe2\x95\x91 \e[1;34m     v 0.2.5        \e[0m\e[34m\xe2\x95\x91\e[0m"
 echo -e "\e[34m\xe2\x95\x91 \e[1;33m  EFI SUPPORTED    \e[0m\e[34m\xe2\x95\x91\e[0m"
 
 # Chiusura cornice
@@ -35,19 +36,34 @@ echo -e "\e[34m\xe2\x95\x9a\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\
 echo ""
 echo -e "\e[1;34mLive Session\e[0m avviata con successo."
 echo -e "Digita \e[1;32mhelp\e[0m per la lista dei comandi disponibili."
+echo -e "Digita \e[1;34mbillynfo\[0m per vedere le informazioni sul sistema operativo"
 echo ""
 
 trap 'echo "spegnimento in corso"; reboot-p' SIGUSR1
 trap 'echo "riavviamento in corso"; reboot' SIGUSR2
 
-alias changelog="cat changelog"
 
-export PS1='\[\e[1;34m\]BillyOS \[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;33m\]\w\[\e[0m\]# '
+#export PS1='\[\e[1;34m\]BillyOS \[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;33m\]\w\[\e[0m\]'
+
+dmesg -n 1
+
+echo -e "\e[36m--- BillyOS Login ---\e[0m"
+echo -n "Accedi come (r)oot o (b)illy (utente)? "
+read choice
+if [ "$choice" = "b" ]; then
+    USER_CMD="setuidgid 1000 sh"
+    USER_NAME="Billy"
+    exec setsid cttyhack su - billy
+else
+    USER_CMD="sh"
+    USER_NAME="Root"
+    exec setsid cttyhack su - root	
+fi
+
+echo -e "\e[32mSessione avviata per: $USER_NAME\e[0m"
 
 while :; do
-	setsid cttyhack /bin/sh < /dev/tty0 > /dev/tty0 2>&1
-	echo -e "\e[31mla shell e' stato chiusa o e' crashata :|, riavvio in corso... tra 1 secondo\e[0m"
-	sleep 1
+    echo -e "\n\a\e[31m[!] Shell terminata. Riavvio login in corso...\e[0m"
+    sleep 1
 done
-
 
