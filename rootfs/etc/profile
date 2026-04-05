@@ -3,6 +3,6 @@ case $(id -u) in
 		export PS1='\[\e[1;31m\]BillyOS-ROOT \[\e[1;33m\]root@\u\[\e[0m\]:\[\e[1;34m\]\w\[\e[0m\]# '
 		;;
 	*)
-		export PS1='\[\e[1;34m\]BillyOS \[\e[1;32m\]\u@\h[\e[0m\]:\[\e[1;33m\]\w\[\e[0m\]$ '
+		export PS1='\[\e[1;34m\]BillyOS \[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;33m\]\w\[\e[0m\]$ '
 		;;
 esac
