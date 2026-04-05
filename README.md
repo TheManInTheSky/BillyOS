@@ -10,3 +10,7 @@ a little distro made for fun.
 * the kernel linux (custom made)
 * BusyBox for rootfs
 * support efi
+## Tools original for BillyOS
+
+* billynfo (credits to Gus45Fring for writing the program)
+* more will be added
